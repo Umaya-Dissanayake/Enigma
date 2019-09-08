@@ -19,4 +19,30 @@
     <string name="menu_admin">Admin</string>
     <string name="menu_logout">Logout</string>
     <string name="txtheader">Enigma</string>
+    <string name="deliveryList">Delivery List</string>
+
+    <string-array name="items">
+        <item>broom1</item>
+        <item>broom2</item>
+        <item>broom3</item>
+    </string-array>
+
+    <string-array name="images">
+        <item>broom1image</item>
+        <item>broom2image</item>
+        <item>broom3image</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>350</item>
+        <item>450</item>
+        <item>400</item>
+    </string-array>
+
+    <string-array name="quantities">
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
