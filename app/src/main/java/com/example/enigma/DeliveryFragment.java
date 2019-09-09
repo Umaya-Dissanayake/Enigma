@@ -21,12 +21,12 @@ public class DeliveryFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
+       // view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+           /* @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Delivery Fragment",Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });*/
     }
 }
