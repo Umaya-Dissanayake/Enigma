@@ -40,36 +40,20 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
 
     <EditText
-        android:id="@+id/txtID"
-        android:layout_width="332dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/greyish"
-        android:ems="10"
-        android:hint="@string/txtid"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProductstxtView" />
-
-    <EditText
         android:id="@+id/txtName"
         android:layout_width="334dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:background="@color/greyish"
         android:ems="10"
         android:hint="@string/txtName"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtID" />
+        app:layout_constraintTop_toBottomOf="@+id/ProductstxtView" />
 
     <EditText
         android:id="@+id/txtDesc"
@@ -105,17 +89,45 @@
 
     <Button
         android:id="@+id/btnInsert"
-        android:layout_width="364dp"
-        android:layout_height="56dp"
+        android:layout_width="103dp"
+        android:layout_height="59dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
         android:layout_marginEnd="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/btnDelete"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnInsert3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnInsert3" />
+
+    <Button
+        android:id="@+id/btnInsert3"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/btnViewAll"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnInsert2"
+        app:layout_constraintEnd_toStartOf="@+id/btnInsert"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnInsert2" />
+
+    <Button
+        android:id="@+id/btnInsert2"
+        android:layout_width="103dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
         android:background="@color/colorAccent"
         android:text="@string/btnInsertDate"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnInsert3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
 
@@ -136,5 +148,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnInsert"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.174" />
 </androidx.constraintlayout.widget.ConstraintLayout>

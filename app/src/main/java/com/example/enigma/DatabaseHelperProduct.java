@@ -1,11 +1,12 @@
 package com.example.enigma;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelperProduct extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "product.db";
+    public static final String DATABASE_NAME = "product1.db";
     public static final String TABLE_NAME = "product_table";
     public static final String Col_Id = "ID";
     public static final String Col_name = "Name";
@@ -16,13 +17,15 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
 
     public DatabaseHelperProduct(Context context) {
         super(context, DATABASE_NAME, null, 1);
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Title text,Rating DOUBLE,Price INTEGER )");
+     sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Title text,Rating DOUBLE,Price DOUBLE )");
+
+
     }
 
     @Override
@@ -31,4 +34,44 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
 
     }
+
+    public boolean addInfo(Product obj){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(DatabaseHelperProduct.Col_name,obj.getTitle());
+        values.put(DatabaseHelperProduct.Col_title,obj.getShortdesc());
+        values.put(DatabaseHelperProduct.Col_rating,obj.getRating());
+        values.put(DatabaseHelperProduct.Col_price,obj.getPrice());
+
+        long result =  db.insert(TABLE_NAME,null,values);
+
+        if(result>0){
+            return true;
+
+        }else{
+            return false;
+        }
+
+    }
+
+//    public boolean insertData(String name, String title, double rating, double price ){
+//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        ContentValues contentValues = new ContentValues();
+//        contentValues.put(Col_name,name);
+//        contentValues.put(Col_title,title);
+//        contentValues.put(Col_rating,rating);
+//        contentValues.put(Col_price,price);
+//        long result =  sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
+//
+//        if(result == -1){
+//            return  false;
+//        }
+//        else{
+//            return true;
+//        }
+//
+//    }
+
 }

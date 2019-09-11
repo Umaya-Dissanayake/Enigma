@@ -39,4 +39,6 @@
     <string name="txtRate">Rate...</string>
     <string name="txtPrice">Price...</string>
     <string name="btnInsertDate">Insert Data</string>
+    <string name="btnViewAll">View All</string>
+    <string name="btnDelete">Delete</string>
 </resources>
