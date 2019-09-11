@@ -2,6 +2,7 @@ package com.example.enigma;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -56,22 +57,12 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
 
     }
 
-//    public boolean insertData(String name, String title, double rating, double price ){
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(Col_name,name);
-//        contentValues.put(Col_title,title);
-//        contentValues.put(Col_rating,rating);
-//        contentValues.put(Col_price,price);
-//        long result =  sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
-//
-//        if(result == -1){
-//            return  false;
-//        }
-//        else{
-//            return true;
-//        }
-//
-//    }
+    public Cursor getAllData(){
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+        return res;
+
+
+    }
 
 }

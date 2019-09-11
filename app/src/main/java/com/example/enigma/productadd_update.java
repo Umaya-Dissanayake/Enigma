@@ -1,7 +1,7 @@
 package com.example.enigma;
 
-import android.content.Context;
-import android.net.Uri;
+import android.app.AlertDialog;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.InputMismatchException;
@@ -20,7 +19,7 @@ import java.util.InputMismatchException;
 public class productadd_update extends Fragment {
 
     EditText txtname,txttitle,txtrating,txtprice;
-    Button btninsert, btnclear;
+    Button btninsert, btnclear,btnUpdate,btndelete,btnViewAll,btnsearch;
     View v;
     DatabaseHelperProduct db;
     String examCenterValue;
@@ -40,6 +39,12 @@ public class productadd_update extends Fragment {
 
         btninsert = v.findViewById(R.id.btnInsert);
         btnclear = v.findViewById(R.id.btnClear);
+        btndelete = v.findViewById(R.id.btnDelete);
+        btnUpdate = v.findViewById(R.id.btnUpdate);
+        btnViewAll = v.findViewById(R.id.btnViewAll);
+        btnsearch= v.findViewById(R.id.btnsearch);
+
+
         db = new DatabaseHelperProduct(this.getActivity());
 
 
@@ -104,7 +109,7 @@ public class productadd_update extends Fragment {
 
                             }catch (NumberFormatException s){
 
-                                Toast.makeText(getActivity(), "Invalid rating",Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), "Invalid data type entered",Toast.LENGTH_LONG).show();
 
 
                             }
@@ -155,16 +160,52 @@ public class productadd_update extends Fragment {
 
 
 
+//        btnViewAll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               Cursor res =  db.getAllData();
+//
+//               if(res.getCount() == 0){
+//                   //show message
+//                       showMessage("Error","Nothing found");
+//                   return;
+//               }
+//
+//               StringBuffer buffer = new StringBuffer();
+//               while(res.moveToNext()){
+//                   buffer.append("ID : " +res.getString(0)+ "\n");
+//                   buffer.append("Name : " +res.getString(1)+ "\n");
+//                   buffer.append("Description : " +res.getString(2)+ "\n");
+//                   buffer.append("Rate : " +res.getString(3)+ "\n");
+//                   buffer.append("Price : " +res.getString(4)+ "\n");
+//               }
+//                showMessage("Data",buffer.toString());
+//            }
+//        });
+
+
+
+
 
         return v;
 
 
     }
-
-
-
+//    public void showMessage(String title, String message) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder();
+//        builder.setCancelable(true);
+//        builder.setTitle(title);
+//        builder.setMessage(message);
+//        builder.show();
+//    }
 
 
 
 }
+
+
+
+
+
+
 

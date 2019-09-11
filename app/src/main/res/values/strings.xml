@@ -41,4 +41,6 @@
     <string name="btnInsertDate">Insert Data</string>
     <string name="btnViewAll">View All</string>
     <string name="btnDelete">Delete</string>
+    <string name="btnSelect">Search</string>
+    <string name="btnupdate">Update</string>
 </resources>

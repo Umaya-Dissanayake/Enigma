@@ -1,6 +1,8 @@
 package com.example.enigma;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import android.view.View;
@@ -56,15 +58,47 @@ public class MainActivity extends AppCompatActivity
 
 
         //adding some items to our list
-        productList.add(new Product(5, "Samitha", "1asasassa" , 7.0, 4.3, R.drawable.p1));
-        productList.add(new Product(2, "Dell Inspiron 7000 Core i5 7th Gen - (8 GB/1 TB HDD/Windows 10 Home)", "14 inch, Gray, 1.659 kg", 4.3, 60000, R.drawable.p2_img));
-        productList.add(new Product(3, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p4_img));
-        productList.add(new Product(4, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p5_img));
-        productList.add(new Product(5, "Samitha", "1asasassa" , 7.0, 4.3, R.drawable.p1));
-        productList.add(new Product(2, "Dell Inspiron 7000 Core i5 7th Gen - (8 GB/1 TB HDD/Windows 10 Home)", "14 inch, Gray, 1.659 kg", 4.3, 60000, R.drawable.p2_img));
-        productList.add(new Product(3, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p4_img));
-        productList.add(new Product(4, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p5_img));
 
+
+
+               Cursor res =  mydb.getAllData();
+
+               if(res.getCount() == 0){
+                   //show message
+
+                   return;
+               }
+
+
+
+//                   buffer.append("ID : " +res.getString(0)+ "\n");
+//                   buffer.append("Name : " +res.getString(1)+ "\n");
+//                   buffer.append("Description : " +res.getString(2)+ "\n");
+//                   buffer.append("Rate : " +res.getString(3)+ "\n");
+//                   buffer.append("Price : " +res.getString(4)+ "\n");
+
+
+
+        while(res.moveToNext()) {
+            int id = Integer.parseInt(res.getString(0));
+            String name =res.getString(1);
+            String des = res.getString(2);
+           double rate =Double.parseDouble(res.getString(3));
+            double price =Integer.parseInt(res.getString(4));
+
+
+//            productList.add(new Product(res.getString(0), res.getString(1), res.getString(2), res.getString(3), res.getString(4), R.drawable.p1));
+            productList.add(new Product(id, name, des, rate, price, R.drawable.p2_img));
+        }
+
+//        productList.add(new Product(2, "Dell Inspiron 7000 Core i5 7th Gen - (8 GB/1 TB HDD/Windows 10 Home)", "14 inch, Gray, 1.659 kg", 4.3, 60000, R.drawable.p2_img));
+//        productList.add(new Product(3, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p4_img));
+//        productList.add(new Product(4, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p5_img));
+//        productList.add(new Product(5, "Samitha", "1asasassa" , 7.0, 4.3, R.drawable.p1));
+//        productList.add(new Product(2, "Dell Inspiron 7000 Core i5 7th Gen - (8 GB/1 TB HDD/Windows 10 Home)", "14 inch, Gray, 1.659 kg", 4.3, 60000, R.drawable.p2_img));
+//        productList.add(new Product(3, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p4_img));
+//        productList.add(new Product(4, "Microsoft Surface Pro 4 Core m3 6th Gen - (4 GB/128 GB SSD/Windows 10)", "13.3 inch, Silver, 1.35 kg", 4.3, 60000, R.drawable.p5_img));
+//
 
 
         adapterhome = new ProductAdapterhome(this, productList);
@@ -157,7 +191,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-//samitha
 
 
-}
+
+
+
+    }
