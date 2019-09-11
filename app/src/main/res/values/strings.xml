@@ -44,5 +44,15 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <string name="delivery">Delivery</string>
+    <string name="customerName">Name</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="proName">Product Name</string>
+    <string name="qty">Quantity</string>
+    <string name="price">Price</string>
+    <string name="insert">Add Delivery</string>
+    <string name="id">Product ID</string>
+    <string name="clear">Clear</string>
 
 </resources>

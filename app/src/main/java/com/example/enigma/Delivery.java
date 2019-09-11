@@ -2,38 +2,43 @@ package com.example.enigma;
 
 public class Delivery {
 
-    private int id;
-    private String title;
-    private double price;
+    private String customerName;
+    private String address;
+    private String phone;
+    private int proID;
     private int quantity;
-    private int image;
+    private double price;
 
-
-    public Delivery(int id, String title, double price, int quantity, int image) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
+    public Delivery(String customerName, String address, String phone, int proID, int quantity, double price) {
+        this.customerName = customerName;
+        this.address = address;
+        this.phone = phone;
+        this.proID = proID;
         this.quantity = quantity;
-        this.image = image;
+        this.price = price;
     }
 
-    public int getId() {
-        return id;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public String getTitle() {
-        return title;
+    public String getAddress() {
+        return address;
     }
 
-    public double getPrice() {
-        return price;
+    public String getPhone() {
+        return phone;
+    }
+
+    public int getProID() {
+        return proID;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public int getImage() {
-        return image;
+    public double getPrice() {
+        return price;
     }
 }
