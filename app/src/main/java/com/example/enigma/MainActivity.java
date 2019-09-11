@@ -90,9 +90,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Fragment fragment = null;
-
         int id = item.getItemId();
+        Fragment fragmentDelivery = null;
 
         if (id == R.id.nav_home) {
 
@@ -101,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_purchases) {
 
         } else if (id == R.id.nav_delivery){
-            fragment = new DeliveryFragment();
+            fragmentDelivery = new FragmentDelivery();
 
         } else if (id == R.id.nav_admin) {
 
@@ -109,10 +108,10 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        if(fragment != null){
+        if(fragmentDelivery != null){
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();
-            ft.replace(R.id.screenArea,fragment);
+            ft.replace(R.id.screen_Area,fragmentDelivery);
             ft.commit();
         }
 
