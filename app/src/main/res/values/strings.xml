@@ -19,4 +19,8 @@
     <string name="menu_admin">Admin</string>
     <string name="menu_logout">Logout</string>
     <string name="txtheader">Enigma</string>
+    <string name="delete_btn">Delete</string>
+    <string name="update_btn">Update</string>
+    <string name="textView_1">Item Name</string>
+    <string name="textView2">Description</string>
 </resources>

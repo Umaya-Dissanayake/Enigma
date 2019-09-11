@@ -18,6 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.Menu;
 
@@ -76,7 +79,9 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
+        Fragment fragment = null;
+
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
@@ -86,11 +91,23 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_purchases) {
 
+            fragment = new purchaseFragment();
+
         } else if (id == R.id.nav_admin) {
 
         } else if (id == R.id.nav_share) {
 
         }
+
+        if(fragment != null){
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+
+            ft.replace(R.id.screen_area, fragment);
+            ft.commit();
+        }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
