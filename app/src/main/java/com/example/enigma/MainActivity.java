@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
 
+
         } else if (id == R.id.nav_account) {
 
 
@@ -93,9 +94,16 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new purchaseFragment();
 
+        } else if (id == R.id.nav_delivery) {
+
+            fragment = new cartEdit_fragment();
+
         } else if (id == R.id.nav_admin) {
 
+
+
         } else if (id == R.id.nav_share) {
+            fragment = new additem_fragment();
 
         }
 

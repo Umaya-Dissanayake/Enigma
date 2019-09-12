@@ -21,6 +21,25 @@
     <string name="txtheader">Enigma</string>
     <string name="delete_btn">Delete</string>
     <string name="update_btn">Update</string>
-    <string name="textView_1">Item Name</string>
+    <string name="textView_1">Item Name :</string>
     <string name="textView2">Description</string>
+    <string name="txtViewCust">Customer Name :</string>
+    <string name="editTextCustomer">Customer Name:</string>
+    <string name="Insert_btn">Insert</string>
+    <string name="TextViewItem">Item</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtPurchaseItem">Purchase Item</string>
+    <string name="edittxt_itemName">Item Name :</string>
+    <string name="add_btn">Add</string>
+    <string name="edittxt_qty">Quantity</string>
+    <string name="edittxt_prize">Price :</string>
+    <string name="edittxt_address">Adress :</string>
+    <string name="txtEditItems">Change Purchased Items</string>
+    <string name="edittxt_purchaseID">Purchase ID :</string>
+    <string name="btn_search">Search</string>
+    <string name="txtCustomer">Customer Name</string>
+    <string name="txtItemName">Item Name</string>
+    <string name="txtprice">Price :</string>
 </resources>

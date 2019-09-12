@@ -3,7 +3,7 @@
     <color name="colorPrimary">#111432</color>
     <color name="colorPrimaryDark">#111432</color>
     <color name="colorAccent">#F25106</color>
-    <color name="white">#fff</color>
+    <color name="white">#FFFFFF</color>
 
     <style name="delete_btn">Delete</style>
 </resources>
