@@ -9,7 +9,7 @@ import android.provider.BaseColumns;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Enigma.db";
+    public static final String DATABASE_NAME = "Enigma5.db";
     public static final String TABLE_NAME = "Deliveries";
 
     public static final String COLUMN_NAME_PROID = "productID" ;
@@ -33,7 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 COLUMN_NAME_CUSNAME + " TEXT, " +
                 COLUMN_NAME_ADDRESS + " TEXT, " +
                 COLUMN_NAME_QUANTITY + " INTEGER, " +
-                COLUMN_NAME_PRICE + " REAL) ";
+                COLUMN_NAME_PRICE + " DOUBLE) ";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
     }
