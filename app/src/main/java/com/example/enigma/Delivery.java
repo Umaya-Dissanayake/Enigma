@@ -2,10 +2,12 @@ package com.example.enigma;
 
 public class Delivery {
 
+    private int proID;
+
     private String customerName;
     private String address;
     private String phone;
-    private int proID;
+
     private int quantity;
     private double price;
 

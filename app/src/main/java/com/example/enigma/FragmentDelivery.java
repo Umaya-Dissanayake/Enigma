@@ -46,7 +46,7 @@ public class FragmentDelivery extends Fragment {
         deliveryList.add(new Delivery("Customer4","Address4","0774859655",3,2,300.00));
         deliveryList.add(new Delivery("Customer5","Address5","0774859655",3,2,300.00));
 
-
-
     }
+
+
 }
