@@ -59,6 +59,32 @@ public class ProductAdapterhome extends RecyclerView.Adapter<ProductAdapterhome.
 
     }
 
+@Override
+    public int getItemCount() {
+        return productList.size();
+    }
+
+    class productViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+        TextView textViewTitle, textViewDesc, textViewRating, textViewPrice,textViewId;
+        Button btnpurchase;
+        public productViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+          textViewId = itemView.findViewById(R.id.textVID);
+            imageView = itemView.findViewById(R.id.imageView);
+            textViewTitle = itemView.findViewById(R.id.textViewTitle);
+            textViewDesc  = itemView.findViewById(R.id.textViewShortDesc);
+            textViewRating = itemView.findViewById(R.id.textViewRating);
+            textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            btnpurchase = itemView.findViewById(R.id.btnP);
+
+
+
+        }
+    }
+
+
 
 
 
