@@ -53,3 +53,12 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
         }
 
     }
+
+ public Cursor getAllData(){
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+        return res;
+
+
+    }
+
