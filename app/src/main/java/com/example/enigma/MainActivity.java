@@ -61,3 +61,8 @@ public class MainActivity extends AppCompatActivity
 
         EditText search  = findViewById(R.id.searchtxt);
         search.addTextChangedListener(new TextWatcher() {
+
+ @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
