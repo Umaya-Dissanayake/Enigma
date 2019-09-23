@@ -87,3 +87,16 @@ public class MainActivity extends AppCompatActivity
             return;
         }
 
+
+        while(res.moveToNext()) {
+            int id = Integer.parseInt(res.getString(0));
+            String name =res.getString(1);
+            String des = res.getString(2);
+            double rate =Double.parseDouble(res.getString(3));
+            double price =Integer.parseInt(res.getString(4));
+
+
+
+            productList.add(new Product(id, name, des, rate, price, R.drawable.bg));
+        }
+
