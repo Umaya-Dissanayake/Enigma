@@ -31,3 +31,15 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
+
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+
+    DatabaseHelperProduct mydb;
+
+    RecyclerView recyclerView;
+    ProductAdapterhome adapterhome;
+
+    List<Product> productList;
+
+    Button btnDelivery;
