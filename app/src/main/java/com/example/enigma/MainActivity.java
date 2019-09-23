@@ -43,3 +43,21 @@ public class MainActivity extends AppCompatActivity
     List<Product> productList;
 
     Button btnDelivery;
+
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        productList = new ArrayList<>();
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mydb = new DatabaseHelperProduct(this);
+
+        EditText search  = findViewById(R.id.searchtxt);
+        search.addTextChangedListener(new TextWatcher() {
