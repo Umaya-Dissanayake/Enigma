@@ -14,3 +14,9 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
     public static final String Col_title = "Title";
     public static final String Col_rating = "Rating";
     public static final String Col_price = "Price";
+
+    public DatabaseHelperProduct(Context context) {
+        super(context, DATABASE_NAME, null, 1);
+       SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+    }
