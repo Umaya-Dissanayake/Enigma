@@ -67,5 +67,17 @@ public boolean updateData(String id, String name, String des, String rate, Strin
         ContentValues values = new ContentValues();
 
 
+ values.put(DatabaseHelperProduct.Col_Id,id);
+        values.put(DatabaseHelperProduct.Col_name,name);
+        values.put(DatabaseHelperProduct.Col_title,des);
+        values.put(DatabaseHelperProduct.Col_rating,rate);
+        values.put(DatabaseHelperProduct.Col_price,price);
+
+        db.update(TABLE_NAME,values,"ID = ?",new String[]{ id });
+
+        return true;
+    }
+
+
 
 
