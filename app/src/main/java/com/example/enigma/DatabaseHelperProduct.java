@@ -79,5 +79,15 @@ public boolean updateData(String id, String name, String des, String rate, Strin
     }
 
 
+    public int deleteData(String id){
+
+        SQLiteDatabase db = getWritableDatabase();
+        return db.delete(TABLE_NAME,"ID = ?",new String[]{id});
+
+    }
+}
+
+
+
 
 
