@@ -117,5 +117,18 @@ public class MainActivity extends AppCompatActivity
 
 //        DeliveryIntent();
 
+ private void filter(String text){
+        ArrayList<Product> filteredList = new ArrayList<>();
+
+        for(Product item : productList){
+            if(item.getTitle().toLowerCase().contains(text.toLowerCase() )){
+                filteredList.add(item);
+            }
+        }
+        adapterhome.filterList(filteredList);
+
+    }
+
+
 
 
