@@ -62,3 +62,10 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
 
     }
 
+public boolean updateData(String id, String name, String des, String rate, String price){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+
+
+
