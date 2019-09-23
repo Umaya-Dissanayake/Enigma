@@ -100,3 +100,9 @@ public class MainActivity extends AppCompatActivity
             productList.add(new Product(id, name, des, rate, price, R.drawable.bg));
         }
 
+
+        adapterhome = new ProductAdapterhome(this, productList);
+        recyclerView.setAdapter(adapterhome);
+
+
+
