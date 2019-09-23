@@ -163,6 +163,51 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+ @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        Fragment fragmentHome = null;
+        if (id == R.id.nav_home) {
+
+            Intent home = new Intent(this,MainActivity.class);
+            startActivity(home);
+
+
+        } else if (id == R.id.nav_account) {
+
+
+
+        } else if (id == R.id.nav_purchases) {
+
+        } else if (id == R.id.nav_admin) {
+
+            fragmentHome = new AdminLogin();
+
+        } else if (id == R.id.nav_share) {
+
+        }
+
+        if(fragmentHome != null){
+            FragmentManager fmhome = getSupportFragmentManager();
+            FragmentTransaction fthome = fmhome.beginTransaction();
+            fthome.replace(R.id.screen_area,fragmentHome);
+            fthome.commit();
+
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+
+
+}
+
+
 
 
 
