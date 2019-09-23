@@ -20,3 +20,8 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
     }
+
+  @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Title text,Rating DOUBLE,Price DOUBLE )");
+    }
