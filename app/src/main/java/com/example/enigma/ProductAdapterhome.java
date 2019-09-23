@@ -24,3 +24,8 @@ public class ProductAdapterhome extends RecyclerView.Adapter<ProductAdapterhome.
 
     private Context mCtx;
     List<Product> productList;
+
+ public ProductAdapterhome(Context mCtx, List<Product> productList) {
+        this.mCtx = mCtx;
+        this.productList = productList;
+    }
