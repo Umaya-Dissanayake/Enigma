@@ -38,3 +38,28 @@ public class ProductAdapterhome extends RecyclerView.Adapter<ProductAdapterhome.
         return new productViewHolder(view);
     }
 
+ @Override
+    public void onBindViewHolder(@NonNull final productViewHolder holder, int position) {
+        Product product = productList.get(position);
+
+       // holder.textViewId.setText(product.getId());
+        holder.textViewTitle.setText(product.getTitle());
+        holder.textViewDesc.setText(product.getShortdesc());
+        holder.textViewRating.setText(String.valueOf(product.getRating()));
+        holder.textViewPrice.setText(String.valueOf(product.getPrice()));
+        holder.textViewId.setText(String.valueOf(product.getId()));
+        holder.btnpurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             Intent intent = new Intent(holder.btnpurchase.getContext(),AcceptP.class);
+                holder.btnpurchase.getContext().startActivity(intent);
+            }
+        });
+        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage()));
+
+    }
+
+
+
+
+
