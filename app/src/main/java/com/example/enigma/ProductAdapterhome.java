@@ -29,3 +29,12 @@ public class ProductAdapterhome extends RecyclerView.Adapter<ProductAdapterhome.
         this.mCtx = mCtx;
         this.productList = productList;
     }
+
+    @NonNull
+    @Override
+    public productViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mCtx);
+        View view  = inflater.inflate(R.layout.product_layout,null);
+        return new productViewHolder(view);
+    }
+
