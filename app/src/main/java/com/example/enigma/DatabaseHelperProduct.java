@@ -32,3 +32,24 @@ public class DatabaseHelperProduct extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
 
     }
+
+ public boolean addInfo(Product obj){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(DatabaseHelperProduct.Col_name,obj.getTitle());
+        values.put(DatabaseHelperProduct.Col_title,obj.getShortdesc());
+        values.put(DatabaseHelperProduct.Col_rating,obj.getRating());
+        values.put(DatabaseHelperProduct.Col_price,obj.getPrice());
+
+        long result =  db.insert(TABLE_NAME,null,values);
+
+        if(result>0){
+            return true;
+
+        }else{
+            return false;
+        }
+
+    }
