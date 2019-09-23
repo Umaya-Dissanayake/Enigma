@@ -86,6 +86,15 @@ public class ProductAdapterhome extends RecyclerView.Adapter<ProductAdapterhome.
 
 
 
+    public void filterList(ArrayList<Product> filteredList){
+        productList = filteredList;
+        notifyDataSetChanged();
+    }
+}
+
+
+
+
 
 
 
