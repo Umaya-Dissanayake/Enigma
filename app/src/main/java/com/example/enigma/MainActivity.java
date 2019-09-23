@@ -78,3 +78,12 @@ public class MainActivity extends AppCompatActivity
                 filter(s.toString());
             }
         });
+
+        Cursor res =  mydb.getAllData();
+
+        if(res.getCount() == 0){
+            //show message
+
+            return;
+        }
+
